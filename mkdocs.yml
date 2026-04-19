@@ -6,21 +6,22 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
-    # Light/Dark mode toggle
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+    # Cyberpunk Dark Mode (Primary)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: black        # Deep background
+      accent: cyan         # Neon blue accents for links/hover
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+    # High-Contrast Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: grey
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.sections      # Sidebar sections
     - navigation.expand        # Keep sidebar expanded
