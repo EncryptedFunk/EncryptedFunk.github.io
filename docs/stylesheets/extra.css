@@ -27,7 +27,7 @@ h1, h2, h3, .md-code {
 .md-tabs__link,
 .md-search__input::placeholder {
     color: #f3e600 !important;
-    text-shadow: 0 0 5px #f3e600, 0 0 10px #f3e600; /* The Neon Glow */
+    text-shadow: 0 0 1px #f3e600, 0 0 1px #f3e600; /* The Neon Glow */
     font-weight: bold;
 }
 
