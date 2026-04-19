@@ -41,3 +41,41 @@ h1, h2, h3, .md-code {
 .md-tabs__link--active {
     border-bottom: 2px solid #f3e600;
 }
+
+/* System Warning - Cyberpunk Yellow */
+.admonition.warning {
+    border-color: #f3e600;
+    background-color: rgba(243, 230, 0, 0.05); /* Very faint yellow tint */
+}
+.admonition.warning > .admonition-title {
+    background-color: rgba(243, 230, 0, 0.2);
+    color: #f3e600;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 5px #f3e600;
+}
+
+/* System Note/Info - Neon Cyan */
+.admonition.note, .admonition.info {
+    border-color: #00ffff;
+    background-color: rgba(0, 255, 255, 0.05);
+}
+.admonition.note > .admonition-title, 
+.admonition.info > .admonition-title {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+/* System Danger/Error - Neon Red/Pink */
+.admonition.danger, .admonition.error {
+    border-color: #ff0055;
+    background-color: rgba(255, 0, 85, 0.05);
+}
+.admonition.danger > .admonition-title, 
+.admonition.error > .admonition-title {
+    background-color: rgba(255, 0, 85, 0.2);
+    color: #ff0055;
+    text-shadow: 0 0 5px #ff0055;
+}
