@@ -10,8 +10,8 @@
 
 /* Add a glowing border to the header */
 .md-header {
-  border-bottom: 2px solid #ff00ff;
-  box-shadow: 0 0 10px #ff00ff;
+  border-bottom: 4px solid #ff00ff;
+  box-shadow: 0 0 30px #ff00ff;
 }
 
 /* Custom "Terminal" font for code and headers */
@@ -19,4 +19,25 @@ h1, h2, h3, .md-code {
   font-family: 'Courier New', Courier, monospace !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Target the top header text and icons */
+.md-header__button, 
+.md-header__topic, 
+.md-tabs__link,
+.md-search__input::placeholder {
+    color: #f3e600 !important;
+    text-shadow: 0 0 5px #f3e600, 0 0 10px #f3e600; /* The Neon Glow */
+    font-weight: bold;
+}
+
+/* Ensure the repository icon/name also glows */
+.md-source__repository {
+    color: #f3e600 !important;
+    text-shadow: 0 0 8px #f3e600;
+}
+
+/* Change the underline color for active tabs to match */
+.md-tabs__link--active {
+    border-bottom: 2px solid #f3e600;
 }
