@@ -22,11 +22,15 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.tabs          # Top-level navigation
     - navigation.sections      # Sidebar sections
     - navigation.expand        # Keep sidebar expanded
+    - navigation.path                 # Highlight current page
     - content.code.copy        # Copy buttons for code blocks
     - content.code.annotate    # Explanatory annotations in code
+    - content.action.edit            # "Edit on GitHub" links
+    - content.code.copy
+edit_uri:
+  - edit/main/docs/  # Base URI for "Edit on GitHub" links
 
 markdown_extensions:
   - admonition                 # Tips, Warnings, Notes boxes
