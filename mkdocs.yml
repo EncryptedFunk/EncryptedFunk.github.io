@@ -62,3 +62,8 @@ nav:
   - Planning & Journey:
       - The Roadmap: journey/roadmap.md
       - Technical Hurdles: journey/hurdles.md
+
+plugins:
+  - search
+  - mermaid2:
+      render_mermaid: true
