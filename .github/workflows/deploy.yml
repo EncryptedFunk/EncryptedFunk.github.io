@@ -25,6 +25,7 @@ jobs:
         run: |
           pip install mkdocs-material 
           pip install mkdocs-mermaid2-plugin # Optional: enhances mermaid rendering
+          pip install pymdown-extensions # Optional: for advanced markdown features
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
