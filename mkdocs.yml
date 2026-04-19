@@ -29,8 +29,7 @@ theme:
     - content.code.annotate    # Explanatory annotations in code
     - content.action.edit            # "Edit on GitHub" links
     - content.code.copy
-edit_uri:
-  - edit/main/docs/  # Base URI for "Edit on GitHub" links
+edit_uri: edit/main/docs/  # Base URI for "Edit on GitHub" links
 
 markdown_extensions:
   - admonition                 # Tips, Warnings, Notes boxes
