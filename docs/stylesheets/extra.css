@@ -1,0 +1,22 @@
+:root [data-md-color-scheme="slate"] {
+  /* Cyberpunk Neon Colors */
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--dark: #050505;
+  --md-accent-fg-color: #ff00ff; /* Neon Pink */
+  
+  /* Sidebar and text glow */
+  --md-typeset-a-color: #00ffff; /* Neon Cyan links */
+}
+
+/* Add a glowing border to the header */
+.md-header {
+  border-bottom: 2px solid #ff00ff;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Custom "Terminal" font for code and headers */
+h1, h2, h3, .md-code {
+  font-family: 'Courier New', Courier, monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

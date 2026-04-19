@@ -68,3 +68,6 @@ plugins:
   - search
   - mermaid2:
       render_mermaid: true
+
+extra_css:
+  - stylesheets/extra.css
