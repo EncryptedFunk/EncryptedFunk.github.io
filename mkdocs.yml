@@ -31,6 +31,10 @@ theme:
     - content.code.copy
 edit_uri: edit/main/docs/  # Base URI for "Edit on GitHub" links
 
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+  - javascripts/mermaid-config.js
+
 markdown_extensions:
   - admonition                 # Tips, Warnings, Notes boxes
   - pymdownx.details           # Collapsible blocks
