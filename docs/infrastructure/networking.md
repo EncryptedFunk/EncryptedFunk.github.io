@@ -5,6 +5,7 @@ The homelab has been designed to use a multi-node Swarm behind a Traefik Ingress
 ## Traffic Flow
 
 ```mermaid
+
 graph TD
     User((User)) -->|HTTPS| CF[Cloudflare]
     CF -->|Tunnel/Port Forward| T[Traefik: Docker-01]
@@ -19,3 +20,4 @@ graph TD
     I -->|Persistence| V1[(Volume: Docker-02)]
     N -->|Compute| V2[(Memory: Docker-05)]
     end
+```
