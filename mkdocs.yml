@@ -1,0 +1,57 @@
+site_name: Yet Another Home Lab Journey
+site_url: https://www.dustinfunkhouser.com/
+repo_url: https://github.com/EncryptedFunk/EncryptedFunk.github.io
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light/Dark mode toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs          # Top-level navigation
+    - navigation.sections      # Sidebar sections
+    - navigation.expand        # Keep sidebar expanded
+    - content.code.copy        # Copy buttons for code blocks
+    - content.code.annotate    # Explanatory annotations in code
+
+markdown_extensions:
+  - admonition                 # Tips, Warnings, Notes boxes
+  - pymdownx.details           # Collapsible blocks
+  - pymdownx.superfences:      # Required for Mermaid Diagrams
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.mermaid_format
+  - pymdownx.tabbed:
+      alternate_style: true    # Tabs for Plan vs. Result
+  - pymdownx.tasklist:
+      custom_checkbox: true    # Planning checklists
+  - tables                     # Hardware resource tables
+
+nav:
+  - Home: index.md
+  - Infrastructure:
+      - Hardware & Proxmox: infrastructure/hardware.md
+      - Networking: infrastructure/networking.md
+      - Rocky Swarm Nodes: infrastructure/swarm-nodes.md
+  - Stacks:
+    - Infisical: stacks/infisical.md
+    - n8n: stacks/n8n.md
+    - Adguard: stacks/adguard.md
+  - Planning & Journey:
+      - The Roadmap: journey/roadmap.md
+      - Technical Hurdles: journey/hurdles.md
