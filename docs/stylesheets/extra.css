@@ -8,10 +8,12 @@
   --md-typeset-a-color: #00ffff; /* Neon Cyan links */
 }
 
-/* Add a glowing border to the header */
+/* --- UI COMPONENTS --- */
+
+/* Glowing Header */
 .md-header {
   border-bottom: 4px solid #ff00ff;
-  box-shadow: 0 0 30px #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
 }
 
 /* Custom "Terminal" font for code and headers */
@@ -21,117 +23,81 @@ h1, h2, h3, .md-code {
   letter-spacing: 1px;
 }
 
-/* Target the top header text and icons */
+/* Neon Yellow Header Text & Icons */
 .md-header__button, 
 .md-header__topic, 
 .md-tabs__link,
 .md-search__input::placeholder {
     color: #f3e600 !important;
-    text-shadow: 0 0 1px #f3e600, 0 0 1px #f3e600; /* The Neon Glow */
+    text-shadow: 0 0 8px #f3e600;
     font-weight: bold;
 }
 
-/* Ensure the repository icon/name also glows */
 .md-source__repository {
     color: #f3e600 !important;
     text-shadow: 0 0 8px #f3e600;
 }
 
-/* Change the underline color for active tabs to match */
 .md-tabs__link--active {
     border-bottom: 2px solid #f3e600;
 }
 
-/* System Warning - Cyberpunk Yellow */
-.admonition.warning {
-    border-color: #f3e600;
-    background-color: rgba(243, 230, 0, 0.05); /* Very faint yellow tint */
-}
-.admonition.warning > .admonition-title {
-    background-color: rgba(243, 230, 0, 0.2);
-    color: #f3e600;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 0 0 5px #f3e600;
-}
+/* --- ADMONITIONS (SYSTEM ALERTS) --- */
 
-/* System Note/Info - Neon Cyan */
-.admonition.note, .admonition.info {
-    border-color: #00ffff;
-    background-color: rgba(0, 255, 255, 0.05);
-}
-.admonition.note > .admonition-title, 
-.admonition.info > .admonition-title {
-    background-color: rgba(0, 255, 255, 0.2);
-    color: #00ffff;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px #00ffff;
-}
+.admonition.warning { border-color: #f3e600; background-color: rgba(243, 230, 0, 0.05); }
+.admonition.warning > .admonition-title { background-color: rgba(243, 230, 0, 0.2); color: #f3e600; text-shadow: 0 0 5px #f3e600; }
 
-/* System Danger/Error - Neon Red/Pink */
-.admonition.danger, .admonition.error {
-    border-color: #ff0055;
-    background-color: rgba(255, 0, 85, 0.05);
-}
-.admonition.danger > .admonition-title, 
-.admonition.error > .admonition-title {
-    background-color: rgba(255, 0, 85, 0.2);
-    color: #ff0055;
-    text-shadow: 0 0 5px #ff0055;
-}
+.admonition.note, .admonition.info { border-color: #00ffff; background-color: rgba(0, 255, 255, 0.05); }
+.admonition.note > .admonition-title, .admonition.info > .admonition-title { background-color: rgba(0, 255, 255, 0.2); color: #00ffff; text-shadow: 0 0 5px #00ffff; }
 
-/* Apply a neon glow to all Mermaid SVG elements */
+.admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
+.admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
+
+/* --- MERMAID NEON OVERRIDES --- */
+
+/* Global SVG Glow */
 .mermaid svg {
-  filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.5));
+  filter: drop-shadow(0 0 1px rgba(0, 255, 255, 0.3));
+  background: transparent !important;
 }
 
-/* Specifically make the connection lines "pop" */
-.mermaid .edgePaths .edgePath path {
-  stroke: #00ffff !important;
-  stroke-width: 2px !important;
-  filter: drop-shadow(0 0 5px #00ffff);
-}
-
-/* Make the node boxes glow yellow */
-.mermaid .node rect, .mermaid .node circle, .mermaid .node polygon {
+/* Node Boxes (Docker Containers) */
+.mermaid .node rect, .mermaid .node circle, .mermaid .node polygon, .mermaid .yellowNode rect {
   fill: #000000 !important;
   stroke: #f3e600 !important;
   stroke-width: 2px !important;
   filter: drop-shadow(0 0 5px #f3e600);
 }
 
-/* Style the text inside the boxes */
-.mermaid .node .label {
+/* Text inside Nodes */
+.mermaid .node .label, .mermaid .label text, .mermaid .yellowNode .label {
   color: #f3e600 !important;
-  text-shadow: 0 0 5px #f3e600;
+  fill: #f3e600 !important;
+  text-shadow: 0 0 5px #f3e600 !important;
   font-family: 'Courier New', Courier, monospace !important;
 }
 
-/* Style the subgraph (Docker Swarm) titles */
+/* Connection Lines (Cyan Glow) */
+.mermaid .edgePaths .edgePath path, .mermaid path.edge-thickness-normal {
+  stroke: #00ffff !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+/* Subgraphs (Proxmox Nodes / Swarm Clusters) */
 .mermaid .cluster rect {
   fill: rgba(255, 0, 255, 0.05) !important;
   stroke: #ff00ff !important;
-  stroke-dasharray: 5, 5; /* Distressed/Dashed border feel */
-}
-/* Force the "Netrunner" colors on all SVG text elements */
-.mermaid .node .label, 
-.mermaid .edgeLabel, 
-.mermaid .cluster-label {
-    fill: #f3e600 !important;
-    color: #f3e600 !important;
-    text-shadow: 0 0 5px #f3e600 !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: 8, 4;
+  filter: drop-shadow(0 0 8px #ff00ff);
 }
 
-/* Ensure the connecting lines are neon cyan */
-.mermaid path.edge-thickness-normal,
-.mermaid path.edge-thickness-thick,
-.mermaid .marker.edge-thickness-normal {
-    stroke: #00ffff !important;
-    filter: drop-shadow(0 0 3px #00ffff);
-}
-
-/* Make the box backgrounds solid black so they don't look transparent */
-.mermaid rect.header, .mermaid .node rect, .mermaid .node circle {
-    fill: #000000 !important;
-    stroke: #f3e600 !important;
+/* Subgraph Titles */
+.mermaid .cluster-label, .mermaid .cluster-label text, .mermaid .cluster-label span {
+  fill: #ff00ff !important;
+  color: #ff00ff !important;
+  text-shadow: 0 0 8px #ff00ff !important;
+  font-weight: bold;
+  text-transform: uppercase;
 }
