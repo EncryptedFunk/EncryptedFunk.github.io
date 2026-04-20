@@ -53,12 +53,13 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- MERMAID NEON SURGERY --- */
+/* --- THE CYBERPUNK OVERRIDE (FINAL FORM) --- */
 
-/* 1. Subgraph / Proxmox Nodes (PINK) */
-/* We use the :not() pseudo-class to ensure we only hit the subgraph border, NOT the nodes inside */
-svg g.cluster > rect,
-svg .cluster > rect {
+/* 1. Subgraph Borders (The Proxmox Nodes) */
+/* This targets the rectangle that defines the cluster specifically */
+[id^="mermaid-"] .cluster rect, 
+[id^="b-mermaid-"] .cluster rect,
+svg[id^="mermaid-"] g.cluster rect {
   fill: rgba(255, 0, 255, 0.05) !important;
   stroke: #ff00ff !important;
   stroke-width: 3px !important;
@@ -66,45 +67,37 @@ svg .cluster > rect {
   filter: drop-shadow(0 0 8px #ff00ff) !important;
 }
 
-/* 2. Docker Nodes (YELLOW) */
-/* Targeted specifically by their 'node' class */
-svg g.node rect,
-svg .node rect,
-svg .node circle {
+/* 2. Docker Nodes (The Containers) */
+/* We use a more specific selector to ensure these stay yellow */
+[id^="mermaid-"] .node rect, 
+[id^="mermaid-"] .node circle,
+svg[id^="mermaid-"] g.node rect {
   fill: #000000 !important;
   stroke: #f3e600 !important;
-  stroke-width: 2px !important;
-  stroke-dasharray: 0 !important; /* Ensure nodes are never dashed */
+  stroke-width: 2.5px !important;
+  stroke-dasharray: 0 !important; /* Forces solid line */
   filter: drop-shadow(0 0 5px #f3e600) !important;
 }
 
-/* 3. Text & Labels */
-svg .cluster-label text {
+/* 3. Text and Labels */
+[id^="mermaid-"] .cluster-label text,
+[id^="mermaid-"] .cluster-label span {
   fill: #ff00ff !important;
+  color: #ff00ff !important;
   text-shadow: 0 0 8px #ff00ff !important;
 }
 
-svg .node .label, 
-svg .node text,
-svg .node foreignObject div {
+[id^="mermaid-"] .node .label,
+[id^="mermaid-"] .node text {
   fill: #f3e600 !important;
   color: #f3e600 !important;
   text-shadow: 0 0 5px #f3e600 !important;
 }
 
-/* 4. Connection Lines (CYAN) */
-/* Targeting 'path' specifically to catch both solid and dashed lines */
-svg .edgePaths path,
-svg .edgePath path,
-svg g.edgePath path {
+/* 4. Connection Lines (The Network) */
+[id^="mermaid-"] .edgePaths path,
+[id^="mermaid-"] .edgePath path {
   stroke: #00ffff !important;
   stroke-width: 2.5px !important;
   filter: drop-shadow(0 0 5px #00ffff) !important;
-}
-
-/* Ensure Arrows are Cyan */
-svg .marker path,
-svg marker path {
-  fill: #00ffff !important;
-  stroke: #00ffff !important;
 }
