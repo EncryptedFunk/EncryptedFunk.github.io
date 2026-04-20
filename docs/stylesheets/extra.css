@@ -53,42 +53,59 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- THE NEON OVERRIDE (MAX SPECIFICITY) --- */
+/* --- THE NEON OVERRIDE (ZERO-FAIL EDITION) --- */
 
-/* 1. Subgraph Borders (Proxmox Nodes) */
-[data-md-color-scheme="slate"] .mermaid svg g.cluster rect,
-[data-md-color-scheme="slate"] .mermaid svg .cluster rect {
+/* 1. Subgraph Borders (Targeting the rect inside a 'cluster' group) */
+svg g.cluster rect, 
+svg .cluster rect,
+svg rect.cluster {
   fill: rgba(255, 0, 255, 0.1) !important;
   stroke: #ff00ff !important;
   stroke-width: 4px !important;
   stroke-dasharray: 10, 5 !important;
-  filter: drop-shadow(0 0 10px #ff00ff) !important;
+  filter: drop-shadow(0 0 8px #ff00ff) !important;
 }
 
 /* 2. Subgraph Titles */
-[data-md-color-scheme="slate"] .mermaid svg g.cluster .cluster-label tspan,
-[data-md-color-scheme="slate"] .mermaid svg .cluster-label,
-[data-md-color-scheme="slate"] .mermaid svg .cluster-label text {
+svg g.cluster .cluster-label text,
+svg g.cluster .cluster-label tspan,
+svg .cluster-label text {
   fill: #ff00ff !important;
   color: #ff00ff !important;
   text-shadow: 0 0 10px #ff00ff !important;
   font-weight: 900 !important;
-  font-size: 18px !important;
 }
 
-/* 3. Connection Lines (Force Cyan on everything) */
-[data-md-color-scheme="slate"] .mermaid svg .edgePaths path,
-[data-md-color-scheme="slate"] .mermaid svg .edgePath path,
-[data-md-color-scheme="slate"] .mermaid svg .messageLine0,
-[data-md-color-scheme="slate"] .mermaid svg .messageLine1 {
+/* 3. Connection Lines (Cyan) */
+svg .edgePaths path, 
+svg .edgePath path,
+svg g.edgePath path {
   stroke: #00ffff !important;
   stroke-width: 3px !important;
   filter: drop-shadow(0 0 5px #00ffff) !important;
 }
 
-/* 4. Marker Arrows (Head of the line) */
-[data-md-color-scheme="slate"] .mermaid svg .marker,
-[data-md-color-scheme="slate"] .mermaid svg marker path {
+/* 4. Arrows/Markers */
+svg .marker, 
+svg marker path,
+svg .arrowheadPath {
   fill: #00ffff !important;
   stroke: #00ffff !important;
+}
+
+/* 5. Nodes (Yellow) */
+svg .node rect, 
+svg .node circle, 
+svg .node polygon {
+  fill: #000000 !important;
+  stroke: #f3e600 !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 5px #f3e600) !important;
+}
+
+svg .node .label, 
+svg .node text {
+  fill: #f3e600 !important;
+  color: #f3e600 !important;
+  text-shadow: 0 0 5px #f3e600 !important;
 }
