@@ -53,59 +53,48 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- THE NEON OVERRIDE (ZERO-FAIL EDITION) --- */
+/* --- MERMAID NEON SURGERY --- */
 
-/* 1. Subgraph Borders (Targeting the rect inside a 'cluster' group) */
-svg g.cluster rect, 
+/* 1. Subgraph / Proxmox Nodes (PINK) */
+/* We target only rects that are DIRECT children of a cluster group */
 svg .cluster rect,
-svg rect.cluster {
-  fill: rgba(255, 0, 255, 0.1) !important;
+svg [id^="__mermaid"] .cluster rect {
+  fill: rgba(255, 0, 255, 0.05) !important;
   stroke: #ff00ff !important;
-  stroke-width: 4px !important;
+  stroke-width: 3px !important;
   stroke-dasharray: 10, 5 !important;
   filter: drop-shadow(0 0 8px #ff00ff) !important;
 }
 
-/* 2. Subgraph Titles */
-svg g.cluster .cluster-label text,
-svg g.cluster .cluster-label tspan,
-svg .cluster-label text {
-  fill: #ff00ff !important;
-  color: #ff00ff !important;
-  text-shadow: 0 0 10px #ff00ff !important;
-  font-weight: 900 !important;
-}
-
-/* 3. Connection Lines (Cyan) */
-svg .edgePaths path, 
-svg .edgePath path,
-svg g.edgePath path {
-  stroke: #00ffff !important;
-  stroke-width: 3px !important;
-  filter: drop-shadow(0 0 5px #00ffff) !important;
-}
-
-/* 4. Arrows/Markers */
-svg .marker, 
-svg marker path,
-svg .arrowheadPath {
-  fill: #00ffff !important;
-  stroke: #00ffff !important;
-}
-
-/* 5. Nodes (Yellow) */
-svg .node rect, 
-svg .node circle, 
-svg .node polygon {
+/* 2. Docker Nodes (YELLOW) */
+/* We target nodes specifically to stop them from inheriting pink */
+svg .node rect,
+svg .node circle,
+svg .node polygon,
+svg [id^="__mermaid"] .node rect {
   fill: #000000 !important;
   stroke: #f3e600 !important;
   stroke-width: 2px !important;
+  stroke-dasharray: none !important; /* Ensure these are NOT dashed */
   filter: drop-shadow(0 0 5px #f3e600) !important;
+}
+
+/* 3. Text Overrides */
+svg .cluster-label text {
+  fill: #ff00ff !important;
+  text-shadow: 0 0 8px #ff00ff !important;
 }
 
 svg .node .label, 
 svg .node text {
   fill: #f3e600 !important;
-  color: #f3e600 !important;
   text-shadow: 0 0 5px #f3e600 !important;
+}
+
+/* 4. Connection Lines (CYAN) */
+svg .edgePaths path,
+svg .edgePath path {
+  stroke: #00ffff !important;
+  stroke-width: 2.5px !important;
+  filter: drop-shadow(0 0 5px #00ffff) !important;
 }
