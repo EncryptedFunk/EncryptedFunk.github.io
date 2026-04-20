@@ -69,6 +69,6 @@ nav:
 
 plugins:
   - search
-  - mermaid2:
-      render_mermaid: true
+  #- mermaid2:
+  #    render_mermaid: true
 

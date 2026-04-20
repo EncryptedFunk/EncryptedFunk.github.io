@@ -56,9 +56,9 @@ h1, h2, h3, .md-code {
 /* --- MERMAID NEON SURGERY --- */
 
 /* 1. Subgraph / Proxmox Nodes (PINK) */
-/* We target only rects that are DIRECT children of a cluster group */
-svg .cluster rect,
-svg [id^="__mermaid"] .cluster rect {
+/* We use the :not() pseudo-class to ensure we only hit the subgraph border, NOT the nodes inside */
+svg g.cluster > rect,
+svg .cluster > rect {
   fill: rgba(255, 0, 255, 0.05) !important;
   stroke: #ff00ff !important;
   stroke-width: 3px !important;
@@ -67,34 +67,44 @@ svg [id^="__mermaid"] .cluster rect {
 }
 
 /* 2. Docker Nodes (YELLOW) */
-/* We target nodes specifically to stop them from inheriting pink */
+/* Targeted specifically by their 'node' class */
+svg g.node rect,
 svg .node rect,
-svg .node circle,
-svg .node polygon,
-svg [id^="__mermaid"] .node rect {
+svg .node circle {
   fill: #000000 !important;
   stroke: #f3e600 !important;
   stroke-width: 2px !important;
-  stroke-dasharray: none !important; /* Ensure these are NOT dashed */
+  stroke-dasharray: 0 !important; /* Ensure nodes are never dashed */
   filter: drop-shadow(0 0 5px #f3e600) !important;
 }
 
-/* 3. Text Overrides */
+/* 3. Text & Labels */
 svg .cluster-label text {
   fill: #ff00ff !important;
   text-shadow: 0 0 8px #ff00ff !important;
 }
 
 svg .node .label, 
-svg .node text {
+svg .node text,
+svg .node foreignObject div {
   fill: #f3e600 !important;
+  color: #f3e600 !important;
   text-shadow: 0 0 5px #f3e600 !important;
 }
 
 /* 4. Connection Lines (CYAN) */
+/* Targeting 'path' specifically to catch both solid and dashed lines */
 svg .edgePaths path,
-svg .edgePath path {
+svg .edgePath path,
+svg g.edgePath path {
   stroke: #00ffff !important;
   stroke-width: 2.5px !important;
   filter: drop-shadow(0 0 5px #00ffff) !important;
+}
+
+/* Ensure Arrows are Cyan */
+svg .marker path,
+svg marker path {
+  fill: #00ffff !important;
+  stroke: #00ffff !important;
 }
