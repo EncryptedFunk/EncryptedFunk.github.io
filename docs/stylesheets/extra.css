@@ -56,37 +56,48 @@ h1, h2, h3, .md-code {
 /* --- CYBERPUNK VARIABLE HIJACK --- */
 
 [data-md-color-scheme="slate"] {
-  /* This redefines the theme's own Mermaid variables */
-  --md-mermaid-node-bg-color: #000000;
-  --md-mermaid-node-fg-color: #f3e600;      /* Docker Nodes -> Neon Yellow */
-  --md-mermaid-label-fg-color: #f3e600;     /* Node Text -> Neon Yellow */
-  --md-mermaid-edge-color: #00ffff;         /* Lines -> Neon Cyan */
-  --md-mermaid-edge-bg-color: #000000;
+  --md-mermaid-node-bg-color: #000000 !important;
+  --md-mermaid-node-fg-color: #f3e600 !important;
+  --md-mermaid-label-fg-color: #f3e600 !important;
+  --md-mermaid-edge-color: #00ffff !important;
 }
 
 /* 1. Force Subgraph/Cluster specifically */
-/* The inspector showed --md-default-fg-color--lighter is used for the cluster */
-svg .cluster rect {
-  stroke: #ff00ff !important;               /* Proxmox Nodes -> Neon Pink */
+/* This kills the gray background and the gray outline */
+svg .cluster rect, 
+svg rect.cluster,
+svg [id^="mermaid-"] .cluster rect {
+  fill: #000000 !important;               /* Fixes the Gray Background */
+  stroke: #ff00ff !important;             /* Fixes the Gray Outline */
   stroke-width: 3px !important;
   stroke-dasharray: 10, 5 !important;
-  fill: rgba(255, 0, 255, 0.05) !important;
-  filter: drop-shadow(0 0 8px #ff00ff);
+  filter: drop-shadow(0 0 8px #ff00ff) !important;
 }
 
-/* 2. Force Node Outlines */
+/* 2. Subgraph Titles (PVE Nodes) */
+svg .cluster-label text, 
+svg .cluster-label span,
+svg [id^="mermaid-"] .cluster-label text {
+  fill: #ff00ff !important;               /* Force Pink Text for PVE titles */
+  color: #ff00ff !important;
+  text-shadow: 0 0 8px #ff00ff !important;
+  font-weight: bold !important;
+}
+
+/* 3. Force Node Outlines (Docker) */
 svg .node rect, 
-svg .node circle, 
-svg .node polygon {
-  stroke: #f3e600 !important;               /* Force Yellow */
+svg .node circle,
+svg [id^="mermaid-"] .node rect {
+  stroke: #f3e600 !important;
   stroke-width: 2px !important;
   fill: #000000 !important;
-  filter: drop-shadow(0 0 5px #f3e600);
+  filter: drop-shadow(0 0 5px #f3e600) !important;
 }
 
-/* 3. Force Connection Lines */
-svg .edgePath path {
-  stroke: #00ffff !important;               /* Force Cyan */
+/* 4. Force Connection Lines */
+svg .edgePath path,
+svg [id^="mermaid-"] .edgePath path {
+  stroke: #00ffff !important;
   stroke-width: 2.5px !important;
-  filter: drop-shadow(0 0 5px #00ffff);
+  filter: drop-shadow(0 0 5px #00ffff) !important;
 }
