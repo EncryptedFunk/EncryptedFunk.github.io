@@ -4,7 +4,7 @@
  */
 
 window.mermaidConfig = {
-  startOnLoad: false,
+  startOnLoad: true,
   theme: "base",
   securityLevel: "loose",
   themeVariables: {
