@@ -53,48 +53,42 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- HIGH-PRIORITY NEON OVERRIDES --- */
+/* --- THE NEON OVERRIDE (MAX SPECIFICITY) --- */
 
 /* 1. Subgraph Borders (Proxmox Nodes) */
-svg.mermaid .cluster rect, 
-svg.mermaid .cluster rect.outer, 
-svg.mermaid rect.cluster {
-  fill: rgba(255, 0, 255, 0.05) !important;
+[data-md-color-scheme="slate"] .mermaid svg g.cluster rect,
+[data-md-color-scheme="slate"] .mermaid svg .cluster rect {
+  fill: rgba(255, 0, 255, 0.1) !important;
   stroke: #ff00ff !important;
-  stroke-width: 3px !important;
-  stroke-dasharray: 8, 4 !important; /* Forces the dash */
-  filter: drop-shadow(0 0 8px #ff00ff) !important;
+  stroke-width: 4px !important;
+  stroke-dasharray: 10, 5 !important;
+  filter: drop-shadow(0 0 10px #ff00ff) !important;
 }
 
 /* 2. Subgraph Titles */
-svg.mermaid .cluster-label text, 
-svg.mermaid .cluster-label span,
-svg.mermaid .label foreignObject div {
+[data-md-color-scheme="slate"] .mermaid svg g.cluster .cluster-label tspan,
+[data-md-color-scheme="slate"] .mermaid svg .cluster-label,
+[data-md-color-scheme="slate"] .mermaid svg .cluster-label text {
   fill: #ff00ff !important;
   color: #ff00ff !important;
-  text-shadow: 0 0 8px #ff00ff !important;
-  font-weight: bold !important;
+  text-shadow: 0 0 10px #ff00ff !important;
+  font-weight: 900 !important;
+  font-size: 18px !important;
 }
 
-/* 3. Connection Lines (Cyan) - Fixes the gray dashed line */
-svg.mermaid .edgePaths .edgePath path, 
-svg.mermaid path.edgePath,
-svg.mermaid .edgePath line {
+/* 3. Connection Lines (Force Cyan on everything) */
+[data-md-color-scheme="slate"] .mermaid svg .edgePaths path,
+[data-md-color-scheme="slate"] .mermaid svg .edgePath path,
+[data-md-color-scheme="slate"] .mermaid svg .messageLine0,
+[data-md-color-scheme="slate"] .mermaid svg .messageLine1 {
   stroke: #00ffff !important;
-  stroke-width: 2.5px !important;
+  stroke-width: 3px !important;
   filter: drop-shadow(0 0 5px #00ffff) !important;
 }
 
-/* 4. Ensure Arrows/Markers are Cyan */
-svg.mermaid .marker {
+/* 4. Marker Arrows (Head of the line) */
+[data-md-color-scheme="slate"] .mermaid svg .marker,
+[data-md-color-scheme="slate"] .mermaid svg marker path {
   fill: #00ffff !important;
   stroke: #00ffff !important;
-}
-
-/* 5. Node Text Consistency */
-svg.mermaid .node .label, 
-svg.mermaid .label text {
-  fill: #f3e600 !important;
-  color: #f3e600 !important;
-  text-shadow: 0 0 5px #f3e600 !important;
 }

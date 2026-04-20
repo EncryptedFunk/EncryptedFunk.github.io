@@ -32,6 +32,9 @@ theme:
     - content.code.copy
 edit_uri: edit/main/docs/  # Base URI for "Edit on GitHub" links
 
+extra_css:
+  - stylesheets/extra.css
+
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js
   - javascripts/mermaid-config.js
@@ -69,5 +72,3 @@ plugins:
   - mermaid2:
       render_mermaid: true
 
-extra_css:
-  - stylesheets/extra.css
