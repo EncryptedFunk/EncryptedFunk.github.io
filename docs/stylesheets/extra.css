@@ -53,51 +53,40 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- THE CYBERPUNK OVERRIDE (FINAL FORM) --- */
+/* --- CYBERPUNK VARIABLE HIJACK --- */
 
-/* 1. Subgraph Borders (The Proxmox Nodes) */
-/* This targets the rectangle that defines the cluster specifically */
-[id^="mermaid-"] .cluster rect, 
-[id^="b-mermaid-"] .cluster rect,
-svg[id^="mermaid-"] g.cluster rect {
-  fill: rgba(255, 0, 255, 0.05) !important;
-  stroke: #ff00ff !important;
+[data-md-color-scheme="slate"] {
+  /* This redefines the theme's own Mermaid variables */
+  --md-mermaid-node-bg-color: #000000;
+  --md-mermaid-node-fg-color: #f3e600;      /* Docker Nodes -> Neon Yellow */
+  --md-mermaid-label-fg-color: #f3e600;     /* Node Text -> Neon Yellow */
+  --md-mermaid-edge-color: #00ffff;         /* Lines -> Neon Cyan */
+  --md-mermaid-edge-bg-color: #000000;
+}
+
+/* 1. Force Subgraph/Cluster specifically */
+/* The inspector showed --md-default-fg-color--lighter is used for the cluster */
+svg .cluster rect {
+  stroke: #ff00ff !important;               /* Proxmox Nodes -> Neon Pink */
   stroke-width: 3px !important;
   stroke-dasharray: 10, 5 !important;
-  filter: drop-shadow(0 0 8px #ff00ff) !important;
+  fill: rgba(255, 0, 255, 0.05) !important;
+  filter: drop-shadow(0 0 8px #ff00ff);
 }
 
-/* 2. Docker Nodes (The Containers) */
-/* We use a more specific selector to ensure these stay yellow */
-[id^="mermaid-"] .node rect, 
-[id^="mermaid-"] .node circle,
-svg[id^="mermaid-"] g.node rect {
+/* 2. Force Node Outlines */
+svg .node rect, 
+svg .node circle, 
+svg .node polygon {
+  stroke: #f3e600 !important;               /* Force Yellow */
+  stroke-width: 2px !important;
   fill: #000000 !important;
-  stroke: #f3e600 !important;
+  filter: drop-shadow(0 0 5px #f3e600);
+}
+
+/* 3. Force Connection Lines */
+svg .edgePath path {
+  stroke: #00ffff !important;               /* Force Cyan */
   stroke-width: 2.5px !important;
-  stroke-dasharray: 0 !important; /* Forces solid line */
-  filter: drop-shadow(0 0 5px #f3e600) !important;
-}
-
-/* 3. Text and Labels */
-[id^="mermaid-"] .cluster-label text,
-[id^="mermaid-"] .cluster-label span {
-  fill: #ff00ff !important;
-  color: #ff00ff !important;
-  text-shadow: 0 0 8px #ff00ff !important;
-}
-
-[id^="mermaid-"] .node .label,
-[id^="mermaid-"] .node text {
-  fill: #f3e600 !important;
-  color: #f3e600 !important;
-  text-shadow: 0 0 5px #f3e600 !important;
-}
-
-/* 4. Connection Lines (The Network) */
-[id^="mermaid-"] .edgePaths path,
-[id^="mermaid-"] .edgePath path {
-  stroke: #00ffff !important;
-  stroke-width: 2.5px !important;
-  filter: drop-shadow(0 0 5px #00ffff) !important;
+  filter: drop-shadow(0 0 5px #00ffff);
 }
