@@ -79,3 +79,37 @@ h1, h2, h3, .md-code {
     color: #ff0055;
     text-shadow: 0 0 5px #ff0055;
 }
+
+/* Apply a neon glow to all Mermaid SVG elements */
+.mermaid svg {
+  filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.5));
+}
+
+/* Specifically make the connection lines "pop" */
+.mermaid .edgePaths .edgePath path {
+  stroke: #00ffff !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+/* Make the node boxes glow yellow */
+.mermaid .node rect, .mermaid .node circle, .mermaid .node polygon {
+  fill: #000000 !important;
+  stroke: #f3e600 !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 5px #f3e600);
+}
+
+/* Style the text inside the boxes */
+.mermaid .node .label {
+  color: #f3e600 !important;
+  text-shadow: 0 0 5px #f3e600;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* Style the subgraph (Docker Swarm) titles */
+.mermaid .cluster rect {
+  fill: rgba(255, 0, 255, 0.05) !important;
+  stroke: #ff00ff !important;
+  stroke-dasharray: 5, 5; /* Distressed/Dashed border feel */
+}
