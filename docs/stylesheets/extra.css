@@ -60,6 +60,7 @@ h1, h2, h3, .md-code {
   --md-mermaid-node-fg-color: #f3e600 !important;
   --md-mermaid-label-fg-color: #f3e600 !important;
   --md-mermaid-edge-color: #00ffff !important;
+  --md-default-fg-color--lighter: #ff00ff !important;
 }
 
 /* 1. Force Subgraph/Cluster specifically */
