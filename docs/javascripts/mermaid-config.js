@@ -5,7 +5,7 @@
 
 window.mermaidConfig = {
   startOnLoad: false,
-  theme: "base",
+  theme: "transparent",
   securityLevel: "loose",
   themeVariables: {
     primaryColor: "#000000",
