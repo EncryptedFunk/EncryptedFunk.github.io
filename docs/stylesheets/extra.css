@@ -53,51 +53,48 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
-/* --- MERMAID NEON OVERRIDES --- */
+/* --- HIGH-PRIORITY NEON OVERRIDES --- */
 
-/* Global SVG Glow */
-.mermaid svg {
-  filter: drop-shadow(0 0 1px rgba(0, 255, 255, 0.3));
-  background: transparent !important;
-}
-
-/* Node Boxes (Docker Containers) */
-.mermaid .node rect, .mermaid .node circle, .mermaid .node polygon, .mermaid .yellowNode rect {
-  fill: #000000 !important;
-  stroke: #f3e600 !important;
-  stroke-width: 2px !important;
-  filter: drop-shadow(0 0 5px #f3e600);
-}
-
-/* Text inside Nodes */
-.mermaid .node .label, .mermaid .label text, .mermaid .yellowNode .label {
-  color: #f3e600 !important;
-  fill: #f3e600 !important;
-  text-shadow: 0 0 5px #f3e600 !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-
-/* Connection Lines (Cyan Glow) */
-.mermaid .edgePaths .edgePath path, .mermaid path.edge-thickness-normal {
-  stroke: #00ffff !important;
-  stroke-width: 2px !important;
-  filter: drop-shadow(0 0 5px #00ffff);
-}
-
-/* Subgraphs (Proxmox Nodes / Swarm Clusters) */
-.mermaid .cluster rect {
+/* 1. Subgraph Borders (Proxmox Nodes) */
+svg.mermaid .cluster rect, 
+svg.mermaid .cluster rect.outer, 
+svg.mermaid rect.cluster {
   fill: rgba(255, 0, 255, 0.05) !important;
   stroke: #ff00ff !important;
-  stroke-width: 2px !important;
-  stroke-dasharray: 8, 4;
-  filter: drop-shadow(0 0 8px #ff00ff);
+  stroke-width: 3px !important;
+  stroke-dasharray: 8, 4 !important; /* Forces the dash */
+  filter: drop-shadow(0 0 8px #ff00ff) !important;
 }
 
-/* Subgraph Titles */
-.mermaid .cluster-label, .mermaid .cluster-label text, .mermaid .cluster-label span {
+/* 2. Subgraph Titles */
+svg.mermaid .cluster-label text, 
+svg.mermaid .cluster-label span,
+svg.mermaid .label foreignObject div {
   fill: #ff00ff !important;
   color: #ff00ff !important;
   text-shadow: 0 0 8px #ff00ff !important;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: bold !important;
+}
+
+/* 3. Connection Lines (Cyan) - Fixes the gray dashed line */
+svg.mermaid .edgePaths .edgePath path, 
+svg.mermaid path.edgePath,
+svg.mermaid .edgePath line {
+  stroke: #00ffff !important;
+  stroke-width: 2.5px !important;
+  filter: drop-shadow(0 0 5px #00ffff) !important;
+}
+
+/* 4. Ensure Arrows/Markers are Cyan */
+svg.mermaid .marker {
+  fill: #00ffff !important;
+  stroke: #00ffff !important;
+}
+
+/* 5. Node Text Consistency */
+svg.mermaid .node .label, 
+svg.mermaid .label text {
+  fill: #f3e600 !important;
+  color: #f3e600 !important;
+  text-shadow: 0 0 5px #f3e600 !important;
 }
