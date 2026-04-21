@@ -76,7 +76,7 @@ graph TD
     D04 -.-> PVE01
 
     %% Styling
-    style D05 fill:#f96,stroke:#333,stroke-width:2px
-    style D01 fill:#69f,stroke:#333,stroke-width:2px
-    style UDM fill:#9f9,stroke:#333,stroke-width:2px
+    style D05 fill:#6c2525,stroke:#bc0404,stroke-width:2px
+    style D01 fill:#29457b,stroke:#4571da,stroke-width:2px
+    style UDM fill:#128412,stroke:#bab968,stroke-width:2px
 ```
