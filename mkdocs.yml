@@ -66,6 +66,7 @@ nav:
   - Planning & Journey:
       - The Roadmap: journey/roadmap.md
       - Technical Hurdles: journey/hurdles.md
+      - Resources & References: journey/resources.md
 
 plugins:
   - search
