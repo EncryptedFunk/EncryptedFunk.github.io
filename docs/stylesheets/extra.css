@@ -53,6 +53,48 @@ h1, h2, h3, .md-code {
 .admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
 .admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
 
+/* Netrunner Blue - Info */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: #4571da;
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: rgba(41, 69, 123, 0.2);
+  border-bottom: 1px solid #4571da;
+}
+
+/* Synapse-Fried Red - Failure/Danger */
+.md-typeset .admonition.failure,
+.md-typeset .admonition.danger {
+  border-color: #bc0404;
+  box-shadow: 0 0 10px rgba(188, 4, 4, 0.1); /* Subtle Glow */
+}
+
+/* Styling the Annotation Marker (The actual + icon) */
+.md-typeset .md-annotate__marker {
+  background-color: #bab968; /* UDM Green */
+  color: #000000;            /* Black icon for contrast */
+}
+
+/* Optional: Adding a Pulse Effect so they "blink" like a terminal */
+.md-typeset .md-annotate__marker {
+  box-shadow: 0 0 0 rgba(186, 185, 104, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(186, 185, 104, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(186, 185, 104, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(186, 185, 104, 0); }
+}
+
+/* Styling the Annotation Tooltip (The text that pops up) */
+.md-typeset .md-annotate__content {
+  border: 1px solid #bab968;
+  background-color: #0d1117; /* Dark Grey background */
+}
+
 /* --- CYBERPUNK VARIABLE HIJACK --- */
 [data-md-color-scheme="slate"] {
   --md-mermaid-node-bg-color: #000000 !important;
