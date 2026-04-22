@@ -52,6 +52,7 @@ D-01	Traefik Proxy	Active	2ms
 D-05	Ollama LLM	Computing	45ms
 PVE-01	Proxmox Kernel	Locked	--
 NAS-01	Shared Storage	Degraded	120ms
+
 4. Annotations & Tooltips
 
 Hover over the marker at the end of this sentence to see if the contrast holds up. (1)
