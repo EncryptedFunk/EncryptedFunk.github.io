@@ -49,6 +49,7 @@ bash echo "Running post-exploit cleanup..."
 | Node | Status |
 | :--- | :--- |
 | D-05 | Active |
+| D-04 | Deactivated |
 
 Check the header row color and cell borders here.
 Node ID	Primary Service	Status	Latency
