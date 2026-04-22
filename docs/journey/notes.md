@@ -46,6 +46,10 @@ bash echo "Running post-exploit cleanup..."
 
 3. Data Tables
 
+| Node | Status |
+| :--- | :--- |
+| D-05 | Active |
+
 Check the header row color and cell borders here.
 Node ID	Primary Service	Status	Latency
 D-01	Traefik Proxy	Active	2ms
@@ -53,11 +57,12 @@ D-05	Ollama LLM	Computing	45ms
 PVE-01	Proxmox Kernel	Locked	--
 NAS-01	Shared Storage	Degraded	120ms
 
-4. Annotations & Tooltips
+1. Annotations & Tooltips
 
 Hover over the marker at the end of this sentence to see if the contrast holds up. (1)
 
 (1): Encryption Key: 8Hjk-99Lm-Xq21 — If this text is hard to read against the tooltip background, we need to adjust your .md-annotate__content class.
+
 5. Progress Bars & Buttons
 
 Useful for the "Roadmap" floor to show how close you are to finishing a phase.

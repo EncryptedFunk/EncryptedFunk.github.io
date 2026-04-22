@@ -48,6 +48,9 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - pymdownx.magiclink
   - pymdownx.superfences # Required for Mermaid and complex nesting
   - pymdownx.progressbar # Fixes Section 5 (System Sync Bars)
   - pymdownx.superfences:      # Required for Mermaid Diagrams
