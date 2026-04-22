@@ -8,8 +8,6 @@ Welcome to the documentation for my projects of various categories and sizes. Th
 * **Homestead:** Garden and high tunnel water automation and weather station metrics.
 * **Electronics:** Hackerbox builds and Software Defined Radio.
 
----
-
 ## Homelab at a Glance
 
 I am currently operating a two-node Proxmox cluster. This environment serves as a testing ground for:
