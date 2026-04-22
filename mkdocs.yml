@@ -5,6 +5,8 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  icons:
+    annotation: material/plus-circle
   palette:
     # Cyberpunk Dark Mode (Primary)
     - media: "(prefers-color-scheme: dark)"
@@ -48,7 +50,7 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
-  - attr_list
+  - markdown.extensions.attr_list
   - md_in_html
   - pymdownx.magiclink
   - pymdownx.superfences # Required for Mermaid and complex nesting
