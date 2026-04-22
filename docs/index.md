@@ -1,12 +1,22 @@
-# Homelab init
+# Projects .init
 
-This page / site is intended to represent the planning, progress, and hurdles of building my homelab.
+Welcome to the documentation for my projects of various categories and sizes. These projects might include: homelab, homestead and gardening, and small electronics.
 
-!!! warning "System Alert: Identity Required"
-    Infisical will fail to boot if the Machine Identity Client Secret is not provided in the environment.
+## Current Objectives
 
-!!! note "Netrunner Intel"
-    Docker-05 is the high-compute node. Direct all LLM traffic here for optimal performance.
+* **Homelab:** Homelab virtualization and documentation.
+* **Homestead:** Garden and high tunnel water automation and weather station metrics.
+* **Electronics:** Hackerbox builds and Software Defined Radio.
 
-!!! error "Critical Failure"
-    Invalid ENCRYPTION_KEY length detected. System shutting down.
+---
+
+## Homelab at a Glance
+
+I am currently operating a two-node Proxmox cluster. This environment serves as a testing ground for:
+
+* **Automation:** n8n and custom CI/CD pipelines.
+* **Security:** Secret injection and DNS-level ad blocking.
+* **AI:** Self-hosted LLMs and specialized compute nodes.
+
+!!! tip "System Status"
+    All primary services are currently **Operational**. See the [Technical Hurdles](planning/hurdles.md) page for a log of previous "explosions."
