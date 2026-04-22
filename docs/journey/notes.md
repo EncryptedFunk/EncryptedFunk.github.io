@@ -8,3 +8,6 @@
 
 !!! error "Critical Failure"
     Invalid ENCRYPTION_KEY length detected. System shutting down.
+
+!!! tip "System Status"
+    All primary services are currently **Operational**. See the [Technical Hurdles](planning/hurdles.md) page for a log of previous "explosions."
