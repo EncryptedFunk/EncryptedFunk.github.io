@@ -85,10 +85,11 @@ Hover over the marker at the end of this sentence to see if the contrast holds u
 
 Useful for the "Roadmap" floor to show how close you are to finishing a phase.
 
-System Synchronization:
-[=15% "Phase 1: Hardware"]
-[=85% "Phase 2: Networking"]
-[=0% "Phase 3: World Domination"]
+**System Initialization:**
+
+[=15% "Phase 1: Hardware"]{: .pkg-progress .pkg-progress-info}
+[=85% "Phase 2: Networking"]{: .pkg-progress .pkg-progress-success}
+[=0% "Phase 3: World Domination"]{: .pkg-progress .pkg-progress-danger}
 
 [:material-rocket: Launch Console]{ .md-button .md-button--primary }
 [View Source Code]{ .md-button }
