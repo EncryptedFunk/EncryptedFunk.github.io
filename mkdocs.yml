@@ -49,7 +49,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.superfences # Required for Mermaid and complex nesting
-  - pymdownx.annotate    # Fixes Section 4 (Hover Annotations)
   - pymdownx.progressbar # Fixes Section 5 (System Sync Bars)
   - pymdownx.superfences:      # Required for Mermaid Diagrams
       custom_fences:
