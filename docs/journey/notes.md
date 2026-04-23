@@ -67,9 +67,9 @@ Color Check: #6c2525 or #bc0404
 | `PUT`       | :material-check-all: Update resource |
 | `DELETE`    | :material-close:     Delete resource |
 
-Check the header row color and cell borders here.
 |Node ID|Primary Service|Status|Latency|
-|D-01|Traefik|Proxy|Active|2ms|
+|-|-|-:-|-:-|
+|D-01|Traefik Proxy|Active|2ms|
 |D-05|Ollama LLM|Computing|45ms|
 |PVE-01|Proxmox Kernel|Locked|--|
 |NAS-01|Shared Storage|Degraded|120ms|
