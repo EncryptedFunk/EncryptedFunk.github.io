@@ -95,3 +95,6 @@ Useful for the "Roadmap" floor to show how close you are to finishing a phase.
 
 [:material-rocket: Launch Console]{ .md-button .md-button--primary }
 [View Source Code]{ .md-button }
+
+[:material-rocket: Launch Console]{: .md-button .md-button--primary }
+[View Source Code]{: .md-button }
