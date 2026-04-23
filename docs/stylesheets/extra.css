@@ -180,15 +180,18 @@ svg .edgePath path {
 .md-typeset .pkg-progress-info .progress-bar {
   background-color: #29457b; /* Blue */
   border: 1px solid rgba(123, 103, 235, 0.75);
+  border-color: rgba(123, 103, 235, 0.75);
 }
 
 .md-typeset .pkg-progress-success .progress-bar {
   background-color: #c1cac1; /* UDM Green */
   color: #000;
   border: 1px solid rgba(59, 173, 95, 0.2);
+  border-color: rgba(59, 173, 95, 0.2);
 }
 
 .md-typeset .pkg-progress-danger .progress-bar {
   background-color: #6c2525; /* Netrunner Red */
   border: 1px solid rgba(228, 131, 131, 0.2);
+  border-color: rgba(228, 131, 131, 0.2);
 }
