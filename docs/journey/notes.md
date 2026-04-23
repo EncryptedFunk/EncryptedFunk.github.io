@@ -44,8 +44,6 @@ Color Check: #6c2525 or #bc0404
 
 "Quantity has a quality all its own, Carl." — Use this for external references or log entries.
 
-1. Content Tabs
-
 === "PowerShell"
 
     powershell Write-Host "Initializing Swarm Node..." -ForegroundColor Cyan 
@@ -54,36 +52,25 @@ Color Check: #6c2525 or #bc0404
 
     bash echo "Running post-exploit cleanup..." 
 
-3. Data Tables
-
-| Node | Status |
-| :--- | :--- |
-| D-05 | Active |
-| D-04 | Deactivated |
-
 | Method      | Description                          |
 | ----------- | ------------------------------------ |
 | `GET`       | :material-check:     Fetch resource  |
 | `PUT`       | :material-check-all: Update resource |
 | `DELETE`    | :material-close:     Delete resource |
 
-|Node ID|Primary Service|Status|Latency|
-|-|-|-:-|-:-|
-|D-01|Traefik Proxy|Active|2ms|
-|D-05|Ollama LLM|Computing|45ms|
-|PVE-01|Proxmox Kernel|Locked|--|
-|NAS-01|Shared Storage|Degraded|120ms|
+| Node ID | Primary Service | Status   | Latency |
+| ------- | --------------- | ----:--- | ---:--- |
+| D-01    | Traefik Proxy   | Active   | 2ms     |
+| D-05    | Ollama LLM      | Computing| 45ms    |
+| PVE-01  | Proxmox Kernel  | Locked   | ------- |
+| NAS-01  | Shared Storage  | Degraded | 120ms   |
 
-1. Annotations & Tooltips
-
-Hover over the marker at the end of this sentence to see if the contrast holds up. (1)
+Hover over the marker contrast for contrast test. (1)
 { .annotate }
 
-1.  : Encryption Key: 8Hjk-99Lm-Xq21 — If this text is hard to read against the tooltip background, we need to adjust your .md-annotate__content class.
+1.  : adjust .md-annotate__content for contrast.
 
-5. Progress Bars & Buttons
-
-Useful for the "Roadmap" floor to show how close you are to finishing a phase.
+2. Progress Bars & Buttons
 
 **System Initialization:**
 
