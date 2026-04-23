@@ -93,8 +93,6 @@ Useful for the "Roadmap" floor to show how close you are to finishing a phase.
 
 [=0% "Phase 3: World Domination"]{: .pkg-progress .pkg-progress-danger}
 
-[:material-rocket: Launch Console]{ .md-button .md-button--primary }
-[View Source Code]{ .md-button }
+[:material-rocket: Launch Console](https://console.dustinfunkhouser.com){: .md-button .md-button--primary }
 
-[:material-rocket: Launch Console]{: .md-button .md-button--primary }
-[View Source Code]{: .md-button }
+[View Source Code](#){: .md-button }
