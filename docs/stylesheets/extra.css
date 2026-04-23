@@ -144,3 +144,21 @@ svg .edgePath path {
   stroke-width: 2.5px !important;
   filter: drop-shadow(0 0 5px #00ffff) !important;
 }
+
+.pkg-progress {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+
+.pkg-progress-info {
+    background-color: #007bff;
+}
+
+.pkg-progress-success {
+    background-color: #28a745;
+}
+
+.pkg-progress-danger {
+    background-color: #dc3545;
+}
