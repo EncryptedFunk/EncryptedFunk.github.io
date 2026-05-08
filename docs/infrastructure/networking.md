@@ -26,6 +26,14 @@ graph TD
         D03[Docker-03: Swarm Worker]
     end
 
+    subgraph PVE02 [Proxmox Node: PVE-02]
+        direction TB
+    end
+
+    subgraph PVE03 [Proxmox Node: PVE-03]
+        direction TB
+    end
+
     %% Network Flow
     UDM --> D01
     UDM --> D04
@@ -38,6 +46,8 @@ graph TD
     %% Management/DNS
     D04 -.-> PVE00
     D04 -.-> PVE01
+    D04 -.-> PVE02
+    D04 -.-> PVE03
 
     %% Styling
     style D05 fill:#6c2525,stroke:#bc0404,stroke-width:2px
