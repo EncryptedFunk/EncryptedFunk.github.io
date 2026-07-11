@@ -1,0 +1,197 @@
+:root [data-md-color-scheme="slate"] {
+  /* Cyberpunk Neon Colors */
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--dark: #050505;
+  --md-accent-fg-color: #ff00ff; /* Neon Pink */
+  
+  /* Sidebar and text glow */
+  --md-typeset-a-color: #00ffff; /* Neon Cyan links */
+}
+
+/* --- UI COMPONENTS --- */
+
+/* Glowing Header */
+.md-header {
+  border-bottom: 4px solid #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Custom "Terminal" font for code and headers */
+h1, h2, h3, .md-code {
+  font-family: 'Courier New', Courier, monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Neon Yellow Header Text & Icons */
+.md-header__button, 
+.md-header__topic, 
+.md-tabs__link,
+.md-search__input::placeholder {
+    color: #f3e600 !important;
+    text-shadow: 0 0 8px #f3e600;
+    font-weight: bold;
+}
+
+.md-source__repository {
+    color: #f3e600 !important;
+    text-shadow: 0 0 8px #f3e600;
+}
+
+.md-tabs__link--active {
+    border-bottom: 2px solid #f3e600;
+}
+
+/* --- ADMONITIONS (SYSTEM ALERTS) --- */
+
+.admonition.warning { border-color: #f3e600; background-color: rgba(243, 230, 0, 0.05); }
+.admonition.warning > .admonition-title { background-color: rgba(243, 230, 0, 0.2); color: #f3e600; text-shadow: 0 0 5px #f3e600; }
+
+.admonition.note, .admonition.info { border-color: #00ffff; background-color: rgba(0, 255, 255, 0.05); }
+.admonition.note > .admonition-title, .admonition.info > .admonition-title { background-color: rgba(0, 255, 255, 0.2); color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+
+.admonition.danger, .admonition.error { border-color: #ff0055; background-color: rgba(255, 0, 85, 0.05); }
+.admonition.danger > .admonition-title, .admonition.error > .admonition-title { background-color: rgba(255, 0, 85, 0.2); color: #ff0055; text-shadow: 0 0 5px #ff0055; }
+
+/* Netrunner Blue - Info */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: #4571da;
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: rgba(41, 69, 123, 0.2);
+  border-bottom: 1px solid #4571da;
+}
+
+/* Synapse-Fried Red - Failure/Danger */
+.md-typeset .admonition.failure,
+.md-typeset .admonition.danger {
+  border-color: #bc0404;
+  box-shadow: 0 0 10px rgba(188, 4, 4, 0.1); /* Subtle Glow */
+}
+
+/* Styling the Annotation Marker (The actual + icon) */
+.md-typeset .md-annotate__marker {
+  background-color: #bab968; /* UDM Green */
+  color: #000000;            /* Black icon for contrast */
+}
+
+/* Optional: Adding a Pulse Effect so they "blink" like a terminal */
+.md-typeset .md-annotate__marker {
+  box-shadow: 0 0 0 rgba(186, 185, 104, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(186, 185, 104, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(186, 185, 104, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(186, 185, 104, 0); }
+}
+
+/* Styling the Annotation Tooltip (The text that pops up) */
+.md-typeset .md-annotate__content {
+  border: 1px solid #bab968;
+  background-color: #0d1117; /* Dark Grey background */
+}
+
+/* --- CYBERPUNK VARIABLE HIJACK --- */
+[data-md-color-scheme="slate"] {
+  --md-mermaid-node-bg-color: #000000 !important;
+  --md-mermaid-node-fg-color: #f3e600 !important;
+  --md-mermaid-label-fg-color: #f3e600 !important;
+  --md-mermaid-edge-color: #00ffff !important;
+  
+  /* THIS fixes the PVE Gray Outline */
+  --md-default-fg-color--lighter: #ff00ff !important; 
+  
+  /* THIS kills the PVE Gray Background */
+  --md-default-fg-color--lightest: #000000 !important; 
+}
+
+/* 1. Subgraph/Cluster - Refined Force */
+svg .cluster rect {
+  fill: #000000 !important;
+  stroke: #ff00ff !important;
+  stroke-width: 3px !important;
+  stroke-dasharray: 10, 5 !important;
+  filter: drop-shadow(0 0 10px #ff00ff) !important;
+}
+
+/* 2. Subgraph Titles */
+svg .cluster-label text, 
+svg .cluster-label span {
+  fill: #ff00ff !important;
+  color: #ff00ff !important;
+  text-shadow: 0 0 10px #ff00ff !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+}
+
+/* 3. Docker Nodes - Solid Yellow */
+svg .node rect, 
+svg .node circle {
+  stroke: #f3e600 !important;
+  stroke-width: 2px !important;
+  fill: #000000 !important;
+  stroke-dasharray: 0 !important; /* Forces solid line */
+  filter: drop-shadow(0 0 5px #f3e600) !important;
+}
+
+/* 4. Connection Lines - Neon Cyan */
+svg .edgePath path {
+  stroke: #00ffff !important;
+  stroke-width: 2.5px !important;
+  filter: drop-shadow(0 0 5px #00ffff) !important;
+}
+
+/* Progress Bar Container */
+.md-typeset .progress {
+  display: block;
+  width: 100%;
+  height: 1.2rem;
+  margin: 1em 0;
+  background-color: rgba(255, 255, 255, 0.1); /* Dark track */
+  border-radius: 0.1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* The actual colored bar */
+.md-typeset .progress-bar {
+  height: 100%;
+  background-color: #29457b; /* Default Netrunner Blue */
+  transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+/* The text inside the bar */
+.md-typeset .progress-label {
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: bold;
+  margin: 0 !important; /* Material adds margins to <p>, kill them here */
+  white-space: nowrap;
+}
+
+/* Specific Cyberpunk Color Variants */
+.md-typeset .pkg-progress-info .progress-bar {
+  background-color: #29457b; /* Blue */
+  border: 1px solid rgba(123, 103, 235, 0.75);
+  border-color: rgba(123, 103, 235, 0.75);
+}
+
+.md-typeset .pkg-progress-success .progress-bar {
+  background-color: #185418; /* UDM Green */
+  color: #000;
+  border: 1px solid rgba(59, 173, 95, 0.2);
+  border-color: rgba(59, 173, 95, 0.2);
+}
+
+.md-typeset .pkg-progress-danger .progress-bar {
+  background-color: #6c2525; /* Netrunner Red */
+  border: 1px solid rgba(228, 131, 131, 0.2);
+  border-color: rgba(228, 131, 131, 0.2);
+}
